@@ -1,0 +1,38 @@
+<br/>
+<br/>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <input type="text" class="for-control" namee ="filterTeam" placeholder="Encuentra un equipo ingresando el nombre" [(ngModel)]="filterTeam"/>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div *ngFor=" let equipos of this.equipo_temporal | filter:filterTeam" class="col col-lg-2 col-md-4 col-sm-12">
+            <app-card-team [equipo]="equipos.name" [escudo]="equipos.logo" [id_equipo]="equipos.team_id"></app-card-team>
+        </div>
+    </div>
+</div>
+
+Filtra equipos
+
+
+<br/>
+<br/>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <input type="text" class="for-control" name ="filterTeam" placeholder="Encuentra un equipo ingresando el nombre" [(ngModel)]="filterTeam"/>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div *ngFor=" let equipos of this.equipo_temporal.respuesta.informacion" class="col col-lg-2 col-md-4 col-sm-12">
+            <app-card-team [equipo]="equipos['name']" [escudo]="equipos['logo']" [id_equipo]="equipos['team_id']"></app-card-team>
+        </div>
+    </div>
+</div>
